@@ -1,3 +1,4 @@
+import time
 import unittest
 
 from pageobjects.homescreen import HomeScreen
@@ -9,16 +10,24 @@ class TestQABoy(unittest.TestCase):
 
     def setUp(self):
         self.driver = Driver()
-        self.driver.navigate(strings.base_url)
-        self.driver.maximize_window()
 
     def test_home_screen_components(self):
-        home_screen = HomeScreen(self.driver)
-        home_screen.validate_title_is_present()
-        home_screen.validate_icon_is_present()
-        home_screen.validate_menu_options_are_present()
-        home_screen.validate_posts_are_visible()
-        home_screen.validate_social_media_links()
+        Map_coordinates = dict({
+            "latitude": 10.776494822918954,
+            "longitude": 106.71232523014088,
+            "accuracy": 100
+        })
+        Map_coordinates1 = dict({
+            "latitude": 10.782607741906473,
+            "longitude": 106.71880544672644,
+            "accuracy": 100
+        })
+        self.driver.instance.execute_cdp_cmd("Emulation.setGeolocationOverride", Map_coordinates)
+
+        self.driver.navigate("https://www.google.com/maps")
+        self.driver.instance.execute_cdp_cmd("Emulation.setGeolocationOverride", Map_coordinates1)
+        self.driver.maximize_window()
+        time.sleep(10)
 
     def tearDown(self):
         self.driver.instance.quit()

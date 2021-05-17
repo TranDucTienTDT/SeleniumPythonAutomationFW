@@ -15,3 +15,5 @@ class Driver:
 
     def maximize_window(self):
         self.instance.maximize_window()
+
+
