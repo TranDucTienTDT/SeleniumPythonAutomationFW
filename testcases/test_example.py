@@ -1,9 +1,7 @@
 import time
 import unittest
 
-from pageobjects.homescreen import HomeScreen
 from webdriver import Driver
-from values import strings
 
 
 class TestQABoy(unittest.TestCase):
