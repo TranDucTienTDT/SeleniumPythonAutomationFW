@@ -10,6 +10,7 @@ class Header:
         self.lang_selector_dropdown = WebDriverWait(self.driver.instance, 10).until(
             EC.visibility_of_element_located((By.XPATH, "//div[@id='lang-selector-dropdown']")))
         self.display_lang = ""
+        self.user_avatar = ""
 
     def change_language(self, lang):
         self.lang_selector_dropdown.click()
@@ -21,3 +22,7 @@ class Header:
                 EC.visibility_of_element_located((By.XPATH, "//li[2]")))
         self.display_lang.click()
 
+    def verify_user_avatar_is_displayed(self):
+        self.user_avatar = WebDriverWait(self.driver.instance, 10).until(
+                EC.visibility_of_element_located((By.XPATH, "//div[@id='user-avatar']")))
+        return self.user_avatar.isDisplayed()
