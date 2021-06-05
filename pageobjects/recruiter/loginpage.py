@@ -14,9 +14,7 @@ class LoginPage:
         self.password_txt = WebDriverWait(self.driver.instance, 10).until(
             EC.visibility_of_element_located((
                 By.XPATH, "//input[@type='password']")))
-        self.login_btn = WebDriverWait(self.driver.instance, 10).until(
-            EC.visibility_of_element_located((
-                By.XPATH, "//button[@type='submit']")))
+
 
     def login(self, username, password):
         self.username_txt.send_keys(username + Keys.TAB)

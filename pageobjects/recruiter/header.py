@@ -25,4 +25,4 @@ class Header:
     def verify_user_avatar_is_displayed(self):
         self.user_avatar = WebDriverWait(self.driver.instance, 10).until(
                 EC.visibility_of_element_located((By.XPATH, "//div[@id='user-avatar']")))
-        return self.user_avatar.isDisplayed()
+        return self.user_avatar.is_displayed()
