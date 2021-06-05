@@ -13,5 +13,5 @@ class TestBase(unittest.TestCase):
         self.driver.maximize_window()
 
     def tearDown(self):
-        time.sleep(10)
+        time.sleep(5)
         self.driver.instance.quit()

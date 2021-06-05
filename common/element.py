@@ -1,23 +1,18 @@
 from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 
 class BasePageElement(object):
     """Base page class that is initialized on every page object class."""
+    wait_time = 10
+    element = ""
 
-    def __set__(self, obj, value):
-        """Sets the text to the value supplied"""
+    def set_element(self, driver, locator):
+        """Sets the element to the value supplied"""
 
-        driver = obj.driver
-        WebDriverWait(driver, 100).until(
-            lambda driver: driver.find_element_by_name(self.locator))
-        driver.find_element_by_name(self.locator).clear()
-        driver.find_element_by_name(self.locator).send_keys(value)
+        self.driver = driver
+        return WebDriverWait(self.driver.instance, self.wait_time).until(EC.visibility_of_element_located(locator))
 
-    def __get__(self, obj, owner):
+    def get_element(self):
         """Gets the text of the specified object"""
-
-        driver = obj.driver
-        WebDriverWait(driver, 100).until(
-            lambda driver: driver.find_element_by_name(self.locator))
-        element = driver.find_element_by_name(self.locator)
-        return element.get_attribute("value")
+        pass
