@@ -1,7 +1,7 @@
 import time
 import unittest
 
-from webdriver import Driver
+from common.webdriver import Driver
 
 
 class TestQABoy(unittest.TestCase):

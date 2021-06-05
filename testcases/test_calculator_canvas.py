@@ -3,7 +3,7 @@ import unittest
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from pageobjects.calculatorscreen import CalculatorScreen
-from webdriver import Driver
+
 
 class TestCalculator(unittest.TestCase):
 

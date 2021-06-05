@@ -1,7 +1,7 @@
 import time
 import unittest
 from pageobjects.recruiter.header import Header
-from webdriver import Driver
+from common.webdriver import Driver
 
 
 class TestQABoy(unittest.TestCase):

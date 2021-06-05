@@ -1,8 +1,7 @@
 import time
 import unittest
 
-from pageobjects.recruiter.loginpage import LoginPage
-from webdriver import Driver
+from common.webdriver import Driver
 
 
 class TestBase(unittest.TestCase):
