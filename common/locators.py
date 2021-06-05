@@ -1,20 +1,24 @@
 from selenium.webdriver.common.by import By
 
 
-class MainPageLocators(object):
-    """A class for main page locators. All main page locators should come here"""
+class HeaderLocators(object):
+    """A class for header locators. All header locators should come here"""
 
-    GO_BUTTON = (By.ID, 'submit')
-
-
-class SearchResultsPageLocators(object):
-    """A class for search results locators. All search results locators should
-    come here"""
-
-    pass
+    LANG_SELECTOR = (By.XPATH, "//div[@id='lang-selector-dropdown']")
+    VI_LANG_ICON = (By.XPATH, "//li[1]")
+    EN_LANG_ICON = (By.XPATH, "//li[2]")
+    USER_AVATAR = (By.XPATH, "//div[@id='lang-selector-dropdown']")
 
 
 class LoginPageLocators(object):
     """A class for login page locators. All login page locators should come here"""
+
+    USERNAME_TXT = (By.XPATH, "//input[@type='email']")
+    PASSWORD_TXT = (By.XPATH, "//input[@type='password']")
+    SIGNUP_TXT = (By.CSS_SELECTOR, ".sign-up")
+
+
+class KycPageLocators(object):
+    """A class for KYC page locators. All KYC page locators should come here"""
 
     pass
