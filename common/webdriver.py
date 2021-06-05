@@ -3,7 +3,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 
 class Driver:
-
+    """This class manage the web driver"""
     def __init__(self):
         self.instance = webdriver.Chrome(ChromeDriverManager().install())
 
