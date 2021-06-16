@@ -77,6 +77,7 @@ class KycJobDescriptionPage(BasePage):
         self.job_title_txt.send_keys(job_title + Keys.TAB)
         self.location_txt.send_keys(location + Keys.TAB)
         self.level_dropdown.click()
+
         return KycBusinessInfoPage(self.driver)
 
 

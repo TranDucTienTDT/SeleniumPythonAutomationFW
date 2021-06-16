@@ -7,7 +7,7 @@ from common.webdriver import Driver
 class TestQABoy(unittest.TestCase):
 
     def setUp(self):
-        self.driver = Driver()
+        self.driver = Driver('chrome')
         self.driver.navigate('https://sandbox-recruiter.jobhopin.com/login')
         self.driver.maximize_window()
 
